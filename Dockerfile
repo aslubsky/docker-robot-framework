@@ -21,8 +21,7 @@ RUN dnf upgrade -y\
 	&& dnf clean all
 
 RUN pip install robotframework==3.0.2\
-	robotframework-seleniumlibrary==3.0.0\
-	robotframework-SikuliLibrary==1.0.1
+	robotframework-selenium2library==3.0.0
 
 ADD drivers/geckodriver-v0.19.1-linux64.tar.gz /opt/robotframework/drivers/
 
