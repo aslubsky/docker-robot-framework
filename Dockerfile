@@ -48,13 +48,13 @@ RUN pip install robotframework==3.0.2\
 	
 #ADD drivers/geckodriver-v0.19.1-linux64.tar.gz /opt/robotframework/drivers/
 
-#COPY bin/chromedriver.sh /opt/robotframework/bin/chromedriver
-#COPY bin/chromium-browser.sh /opt/robotframework/bin/chromium-browser
+COPY bin/chromedriver.sh /opt/robotframework/bin/chromedriver
+COPY bin/chromium-browser.sh /opt/robotframework/bin/chromium-browser
 COPY bin/run-tests-in-virtual-screen.sh /opt/robotframework/bin/
 
 # FIXME: below is a workaround, as the path is ignored
-#RUN mv /usr/lib64/chromium-browser/chromium-browser /usr/lib64/chromium-browser/chromium-browser-original\
-#	&& ln -sfv /opt/robotframework/bin/chromium-browser /usr/lib64/chromium-browser/chromium-browser
+RUN mv /usr/bin/google-chrome-stable /usr/bin/google-chrome-stable-original\
+	&& ln -sfv /opt/robotframework/bin/chromium-browser /usr/bin/google-chrome-stable
 
 ENV PATH=/opt/robotframework/bin:/opt/robotframework/drivers:$PATH
 
