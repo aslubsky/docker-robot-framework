@@ -40,7 +40,6 @@ RUN cd /tmp && wget -N http://chromedriver.storage.googleapis.com/2.26/chromedri
             && ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 
-
 RUN pip install --upgrade pip
 
 RUN pip install robotframework==3.0.2\
@@ -57,5 +56,10 @@ RUN mv /usr/bin/google-chrome-stable /usr/bin/google-chrome-stable-original\
 	&& ln -sfv /opt/robotframework/bin/chromium-browser /usr/bin/google-chrome-stable
 
 ENV PATH=/opt/robotframework/bin:/opt/robotframework/drivers:$PATH
+
+ADD xvfb_init /etc/init.d/xvfd
+RUN chmod a+x /etc/init.d/xvfb
+ADD xvfb-daemon-run /usr/bin/xvfb-daemon-run
+RUN chmod a+x /usr/bin/xvfb-daemon-run
 
 CMD ["run-tests-in-virtual-screen.sh"]
