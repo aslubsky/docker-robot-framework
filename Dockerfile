@@ -12,8 +12,8 @@ ENV SCREEN_WIDTH 1920
 
 RUN dnf upgrade -y\
 	&& dnf install -y\
-		chromedriver-62.0.3202.89-1.fc27\
-		chromium-62.0.3202.89-1.fc27\
+		chromedriver-62.0.3202.94-100.fc26\
+		chromium-62.0.3202.94-100.fc26\
 		firefox-57.0-2.fc27\
 		python2-pip-9.0.1-11.fc27\
 		which-2.21-4.fc27\
