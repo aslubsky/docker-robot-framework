@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/lib64/chromium-browser/chromium-browser-original --disable-gpu --no-sandbox $@
+/usr/bin/google-chrome-stable-original --disable-gpu --no-sandbox $@
 
